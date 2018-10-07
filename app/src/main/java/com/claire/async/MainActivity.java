@@ -32,7 +32,28 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             TextView info = findViewById(R.id.info);
-            info.setText("DONE");
+            info.setText("Go1 DONE");
+        }
+    }
+
+    //需求2，在畫面上按上GO2按鈕，工作 n 秒鐘，結束後在TextView中顯示[Done]
+    class Job2Task extends AsyncTask<Integer, Void, Void>{ //傳入值宣告為Integer，代表整數
+
+        @Override
+        protected Void doInBackground(Integer... integers) {
+            try {
+                Thread.sleep(integers[0]*1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            TextView info = findViewById(R.id.info);
+            info.setText("Go2 Done");
         }
     }
 
@@ -41,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void go2(View v){
-
+        new Job2Task().execute(3);
     }
 
     public void go3(View v){
