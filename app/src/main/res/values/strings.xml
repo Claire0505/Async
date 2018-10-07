@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Async</string>
+    <string name="info">info</string>
+    <string name="go1">go1</string>
+    <string name="go2">go2</string>
+    <string name="go3">go3</string>
 </resources>
